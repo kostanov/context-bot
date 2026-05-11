@@ -21,7 +21,7 @@
 
 
 Детальная информация по обращениям к модели — в файле llm_chat.log  
-Расход баланса ProxyAPI — см. [скриншот](./@screenshots/proxyapi-log.png)
+Расход баланса ProxyAPI — см. [скриншот](./screenshots/proxyapi-log.png)
 
 Скриншоты работы бота - в файлах screenshots/chat-*.png
 
