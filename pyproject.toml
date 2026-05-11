@@ -1,0 +1,29 @@
+[project]
+name = "context-bot"
+version = "0.1.0"
+description = "Context bot service"
+readme = "README.md"
+authors = [
+    { name = "kostanov", email = "k.v.novichkov@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+context-bot = "context_bot:main"
+
+[build-system]
+requires = ["uv_build>=0.11.5,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
