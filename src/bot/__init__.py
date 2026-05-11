@@ -4,13 +4,22 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.client.telegram import TelegramAPIServer
 
-from context_bot.config import load_settings
-from context_bot.handlers import router
+from bot.api_client import build_openai_client
+from bot.config import load_settings
+from bot.context_manager import ContextManager
+from bot.handlers import router
 
 
 async def run_bot() -> None:
     settings = load_settings()
-    dispatcher = Dispatcher()
+    context_manager = ContextManager()
+    openai_client = build_openai_client(settings.proxy_api_key)
+
+    dispatcher = Dispatcher(
+        context_manager=context_manager,
+        openai_client=openai_client,
+        settings=settings,
+    )
     dispatcher.include_router(router)
 
     session: AiohttpSession | None = None

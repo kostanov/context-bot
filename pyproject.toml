@@ -1,19 +1,20 @@
 [project]
 name = "context-bot"
 version = "0.1.0"
-description = "Context bot service"
+description = "Context telegram bot"
 readme = "README.md"
 authors = [
-    { name = "kostanov", email = "k.v.novichkov@gmail.com" }
+    { name = "kostanov", email = "kostanov@mail.ru" }
 ]
 requires-python = ">=3.14"
 dependencies = [
     "aiogram>=3.28.2",
+    "openai>=1.82.0",
     "python-dotenv>=1.2.2",
 ]
 
 [project.scripts]
-context-bot = "context_bot:main"
+context-bot = "bot:main"
 
 [build-system]
 requires = ["uv_build>=0.11.5,<0.12.0"]
@@ -23,6 +24,9 @@ build-backend = "uv_build"
 dev = [
     "ruff>=0.11.9",
 ]
+
+[tool.uv.build-backend]
+module-name = "bot"
 
 [tool.ruff]
 line-length = 100
