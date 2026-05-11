@@ -3,9 +3,6 @@ name = "context-bot"
 version = "0.1.0"
 description = "Context telegram bot"
 readme = "README.md"
-authors = [
-    { name = "kostanov", email = "kostanov@mail.ru" }
-]
 requires-python = ">=3.14"
 dependencies = [
     "aiogram>=3.28.2",
