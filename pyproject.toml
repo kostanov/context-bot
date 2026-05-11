@@ -7,7 +7,10 @@ authors = [
     { name = "kostanov", email = "k.v.novichkov@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "aiogram>=3.28.2",
+    "python-dotenv>=1.2.2",
+]
 
 [project.scripts]
 context-bot = "context_bot:main"
